@@ -8,5 +8,25 @@ fetch(url)
 })
 .then(function (obj){
     console.log(obj.data)
+    obj.data.forEach (element => {
 
+
+        // Fiska upp elementet
+
+        let restaurantName = document.getElementById("name_Restaurant");
+        let restaurantPhone = document.getElementById("restaurant_Phone");
+
+        // Sätter fast och skapar element
+
+        restaurantName.appendChild(document.createTextNode(element.restaurant_name));
+        restaurantPhone.appendChild(document.createTextNode(element.restaurant_phone));
+
+        // Ge elementen innehållet från aktuellt objekt
+
+        restaurantName.textContent = element.restaurant_name;
+        restaurantPhone.textContent = element.restaurant_phone;
+
+
+
+    })
 })

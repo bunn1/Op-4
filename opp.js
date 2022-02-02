@@ -30,7 +30,6 @@ fetch(url)
 
     })
 
-
 // let resultRes =document.getElementById("result")
 
 // function renderRestaurants() {

@@ -9,6 +9,9 @@ console.log(url)
 formElement.addEventListener('submit', event => {
     event.preventDefault()
     console.log("hello.form", restaurantList.filter(rest => rest.address.city === "Petaluma" ))
+    console.log("hello.form", restaurantList.filter(rest => rest.address.city === "Pico Rivera" ))
+    console.log("hello.form", restaurantList.filter(rest => rest.address.city === "Perris" ))
+    
 })
 
 // document.getElementById('restaurang').addEventListener('click', rendera =>{

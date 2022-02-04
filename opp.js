@@ -4,6 +4,7 @@ let url = "https:api.documenu.com/v2/restaurants/search/fields?state=ca?key=4c4b
 // Fiskar upp element
 const formElement = document.getElementById("searchForm")
 const cityInputElement = document.getElementById("cityInput")
+const cuisineInputElement = document.getElementById("cousin")
 
 // Tom lista
 let restaurantList = [];
@@ -11,10 +12,10 @@ url = "data.json"
 console.log(url)
 
 
-let list =document.getElementById("list");
+let list = document.getElementById("list");
 
 // Lista med strängar - städer
-const objektCity = [ 'Petaluma',  'Pico Rivera', 'Perris']
+const objektCity = ['Petaluma', 'Pico Rivera', 'Perris']
 
 const mapFunc = (element) => element.restaurant_name;
 
@@ -35,9 +36,31 @@ formElement.addEventListener('submit', event => {
     // filter restuants blir en ny array som bara innehåller rest du vill ha  
     const filterrestaurants = restaurantList.filter(rest => {
 
-        // Konvertera till småbokstäver
-        return rest.address.city.toLowerCase() === cityInputElement.value.toLowerCase() })
 
+        // Funktionen kollar efter två kriterier / alltså matchar restaurangen och staden / den utgår från att den inte gör det därför sätter vi dem till false
+        let matchCousin = false;
+        let matchCity = false;
+        // Trimmar bort widespace och kollar om strängen är tom / om anv inte skrivit in några kriterier så behandlar vi det som att det matchar.
+        if (cityInputElement.value.trim() === "") {
+            matchCity = true;
+        }
+        if (cuisineInputElement.value.trim() === "") {
+            matchCousin = true;
+        } 
+        // går igenom varje cousin i restaraungen och kollar om det matchar vad anv skrev
+        rest.cuisines.forEach(cuisin => {
+            if (cuisin.trim().toLowerCase() === cuisineInputElement.value.trim().toLowerCase()) {
+              matchCousin = true;
+            }
+        })
+
+        // Konvertera till småbokstäver, är staden samma som anv skrivit in - om det är det 
+         if (rest.address.city.toLowerCase() === cityInputElement.value.toLowerCase()){
+             matchCity = true;
+         }
+         return matchCousin && matchCity;
+    })
+    // Sortera filterRestaurants efter bokstav och kolla på restaurant_name.
 
 
     const mappedRestaurants = filterrestaurants.map(mapFunc)
@@ -84,6 +107,8 @@ fetch(url)
 
         // Tar emot responsen
 
+
+        // Obj data ´= restaranglista
     }).then(function (obj) {
         console.log(obj.data)
         restaurantList = obj.data

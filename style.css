@@ -2,11 +2,66 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #FFFF
+    background-color:	#FF6347;
 }
 
+h1{
+    text-align: center;
+}
 
 img{
-    max-width: 100%;
-    height: auto;
+    justify-content: center;
 }
+
+button#restaurang {
+    background-color: 	#FAFAD2; /* Green */
+    border: none;
+    color:black;
+    padding: 5px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    width: 250px;
+    opacity:0.9;
+  }
+  button#restaurang {
+    transition-duration: 0.4s;
+  }
+  
+  button#restaurang:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+
+button#clear{
+    background-color: 	#FAFAD2; /* Green */
+    border: none;
+    color:black;
+    padding: 5px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    width: 250px;
+    opacity:0.9;
+}
+
+button#clear {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  
+  button#clear:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.40), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+
+
+
+
+  #cityInput{
+
+  }
+  

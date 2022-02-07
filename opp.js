@@ -22,6 +22,39 @@ const mapFunc = (element) => element.restaurant_name;
 const mappedObject = objektCity.map(mapFunc)
 
 
+//Hämtar upp info API 
+fetch(url)
+    .then(function (response) {
+
+        // Tar resursen och konverterar till json data
+        return response.json()
+
+        // Tar emot responsen
+
+
+        // Obj data ´= restaranglista
+    }).then(function (obj) {
+        console.log(obj.data)
+        restaurantList = obj.data
+        obj.data.forEach(element => {
+
+            //
+            // let list = document.getElementById("list");
+            // let listItem = document.createElement("li");
+            // let listChild = document.createElement("p");
+
+            // listItem.appendChild(document.createTextNode(element.restaurant_name))
+
+            // list.appendChild(listItem)
+            // listItem.appendChild(listChild)
+
+            // listChild.textContent = element.cuisines
+
+        })
+
+    })
+
+
 // const objektCity = [{restaurant:adress.city}]
 // function getCity(adress, city) {
 //     let objektCity = [adress.city].join("")
@@ -54,7 +87,7 @@ formElement.addEventListener('submit', event => {
             }
         })
 
-        // Konvertera till småbokstäver, är staden samma som anv skrivit in - om det är det 
+        // Konvertera till småbokstäver, är staden samma som anv skrivit in 
          if (rest.address.city.toLowerCase() === cityInputElement.value.toLowerCase()){
              matchCity = true;
          }
@@ -98,37 +131,6 @@ rensa.addEventListener("click", () => {
 })
 
 
-//Hämtar upp info API 
-fetch(url)
-    .then(function (response) {
-
-        // Tar resursen och konverterar till json data
-        return response.json()
-
-        // Tar emot responsen
-
-
-        // Obj data ´= restaranglista
-    }).then(function (obj) {
-        console.log(obj.data)
-        restaurantList = obj.data
-        obj.data.forEach(element => {
-
-            //
-            // let list = document.getElementById("list");
-            // let listItem = document.createElement("li");
-            // let listChild = document.createElement("p");
-
-            // listItem.appendChild(document.createTextNode(element.restaurant_name))
-
-            // list.appendChild(listItem)
-            // listItem.appendChild(listChild)
-
-            // listChild.textContent = element.cuisines
-
-        })
-
-    })
 
 
 

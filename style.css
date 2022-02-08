@@ -7,10 +7,20 @@
 
 h1{
     text-align: center;
+    background-size: cover;
 }
 
 img{
-    justify-content: center;
+    
+}
+
+h3{
+    text-align: center;
+}
+
+form#searchForm{
+    display: grid;
+    
 }
 
 button#restaurang {
@@ -47,6 +57,7 @@ button#clear{
     border-radius: 10px;
     width: 250px;
     opacity:0.9;
+    margin-bottom:30px;
 }
 
 button#clear {
@@ -57,11 +68,23 @@ button#clear {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.40), 0 17px 50px 0 rgba(0,0,0,0.19);
   }
 
+  input#cityInput{
+    background-color:#FAFAD2;
+    padding: 5px;
+    border-radius: 10px;
+    width: 30%;
+    margin-bottom: 15px;
+    margin-left: 130px;
+    
+  }
 
-
-
-
-  #cityInput{
-
+  input#cousin{
+    background-color:#FAFAD2;
+    padding: 5px;
+    border-radius: 10px;
+    width: 30%;
+    margin-left: 130px;
+    
+    
   }
   

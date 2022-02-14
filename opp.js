@@ -23,16 +23,6 @@ const mapFunc = (element) => element.restaurant_name;
 const mappedObject = objektCity.map(mapFunc)
 
 
-
-
-const objectState = ['']
-
-const mapFuncTwo = (element) => element.restaurant_name;
-
-const mappedObjectTwo = objectState.map(mapFuncTwo)
-
-
-
 //Hämtar upp info API 
 fetch(url)
     .then(function (response) {
@@ -48,35 +38,11 @@ fetch(url)
         restaurantList = obj.data
         obj.data.forEach(element => {
 
-
-            // function appendData (data){
-            //     let diven = document.getElementById("result");
-            //     for (let i = 0; i < data.length; i++) {
-            //         diven.innerHTML = 'address' + data[i].postal_code + data[i].state;
-            //     }
-            // }
-            //
-            // let list = document.getElementById("list");
-            // let listItem = document.createElement("li");
-            // let listChild = document.createElement("p");
-
-            // listItem.appendChild(document.createTextNode(element.restaurant_name))
-
-            // list.appendChild(listItem)
-            // listItem.appendChild(listChild)
-
-            // listChild.textContent = element.cuisines
-
         })
 
     })
 
 
-// const objektCity = [{restaurant:adress.city}]
-// function getCity(adress, city) {
-//     let objektCity = [adress.city].join("")
-//     return objektCity;
-// }
 
 // Anonym funktion för click submit
 formElement.addEventListener('submit', event => {
@@ -91,40 +57,45 @@ formElement.addEventListener('submit', event => {
         let matchCousin = false;
         let matchCity = false;
         let matchState = false;
+
         // Trimmar bort widespace och kollar om strängen är tom / om anv inte skrivit in några kriterier så behandlar vi det som att det matchar.
         if (cityInputElement.value.trim() === "") {
             matchCity = true;
         }
         if (cuisineInputElement.value.trim() === "") {
             matchCousin = true;
-        } 
-        if (stateInputElement.value.trim() === ""){
-            matchState = true;}
+        }
 
-        
-     // går igenom varje cousin i restaraungen och kollar om det matchar vad anv skrev
+        //hämtar upp id på Stater
+        let selectElement = document.getElementById("state-select");
+
+        //väljer antingen CA eller MI stat'
+
+        let selection = selectElement.options[selectElement.selectedIndex].value;
+
+        if (rest.address.state == selection) {
+            matchState = true;
+        }
+
+        // går igenom varje cousin i restaraungen och kollar om det matchar vad anv skrev
         rest.cuisines.forEach(cuisin => {
             if (cuisin.trim().toLowerCase() === cuisineInputElement.value.trim().toLowerCase()) {
-              matchCousin = true;
+                matchCousin = true;
             }
         })
 
-
-    
         // Konvertera till småbokstäver, är staden samma som anv skrivit in 
-         if (rest.address.city.toLowerCase() === cityInputElement.value.toLowerCase()){
-             matchCity = true;
-         }
-         if (rest.address.state.toLowerCase() === stateInputElement.value.toLowerCase()){
-            matchState = true;
+        if (rest.address.city.toLowerCase() === cityInputElement.value.toLowerCase()) {
+            matchCity = true;
         }
-         return matchCousin && matchCity && matchState;
+
+        return matchCousin && matchCity && matchState
     })
     // Sortera filterRestaurants efter bokstav och kolla på restaurant_name.
 
     const mappedRestaurants = filterrestaurants.map(mapFunc)
 
-    // list.innerHTML = mappedRestaurants
+    list.innerHTML = mappedRestaurants
 
     // Rensar ut HTML
     list.innerHTML = "";
@@ -157,56 +128,3 @@ rensa.addEventListener("click", () => {
     list.innerHTML = "";
 })
 
-
-
-
-
-
-
-
-
-// let resultRes =document.getElementById("result")
-
-// function renderRestaurants() {
-//     fetch(url)
-//         .then((response) => response.json()) 
-//         .then((obj) => {
-//              console.log(obj.data)
-
-//         obj.data.forEach(element => {
-
-//              console.log(element.restaurant_name, element.restaurant_phone, element.adress.state)
-
-
-//                 document.getElementById("result").innerHTML += `
-
-//                 <p>${element.restaurant_name}</p>
-//                 <p>${element.restaurant_phone}</p>
-//                 </div>
-//                 `
-
-//             })
-
-//         })
-
-// }
-// renderRestaurants()
-
-
-
-
-
-
-
-
-// function getRestaurant(){
-//     fetch(url)
-//     .then((response) => {
-//         return response.json()
-//     })
-
-//     .then((data) => {
-//         console.log(data)
-//         document.getElementById("result").innerHTML = data
-//     }) 
-// }

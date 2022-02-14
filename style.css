@@ -5,27 +5,48 @@
     background-color:	#FF6347;
 }
 
-h1{
-    text-align: center;
-    background-size: cover;
-}
-
-img{
-    
-}
 
 h3{
-    text-align: center;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
-form#searchForm{
-    display: grid;
-    
+
+main.container {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ flex-flow: column
+  
+}
+
+.one{
+
+}
+
+.two{
+
+}
+
+.three{
+
+}
+
+
+#state-select{
+  background-color:#FAFAD2;
+  margin-left: 150px;
+  padding: 5px 40px;
+  border-radius: 10px;
+  width: 30px;
+  
+
 }
 
 button#restaurang {
     background-color: 	#FAFAD2; /* Green */
     border: none;
+    margin:30px 90px;
     color:black;
     padding: 5px 24px;
     text-align: center;
@@ -33,8 +54,7 @@ button#restaurang {
     display: inline-block;
     font-size: 16px;
     border-radius: 10px;
-    width: 250px;
-    opacity:0.9;
+    width: 200px;
   }
   button#restaurang {
     transition-duration: 0.4s;
@@ -55,9 +75,7 @@ button#clear{
     display: inline-block;
     font-size: 16px;
     border-radius: 10px;
-    width: 250px;
-    opacity:0.9;
-    margin-bottom:30px;
+    width:80px;
 }
 
 button#clear {
@@ -69,13 +87,12 @@ button#clear {
   }
 
   input#cityInput{
+    
     background-color:#FAFAD2;
     padding: 5px;
+    margin: 0px 50px;
     border-radius: 10px;
     width: 30%;
-    margin-bottom: 15px;
-    margin-left: 130px;
-    
   }
 
   input#cousin{
@@ -83,8 +100,17 @@ button#clear {
     padding: 5px;
     border-radius: 10px;
     width: 30%;
-    margin-left: 130px;
-    
     
   }
-  
+
+  #clear{
+    margin: 0px 150px;
+  }
+
+  #list{
+    border: 1px solid;
+    width:300px;
+    margin:0px 40px;
+    text-decoration-skip: none;
+  }
+

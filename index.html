@@ -9,34 +9,41 @@
 </head>
 <link rel="icon" href="data:;base64,=">
 <link rel="stylesheet" href="style.css">
+
 <body>
 
-   
+    <h3>Sök Restaurang</h3>
 
-    <main>
+    <main class="container">
 
-        <img src="images/place.jpg" alt="mat" width="300" height="250"> <br>
+        <div class="one">
+            <select id="state-select" name="state-select">
+                <option value="" disabled selected hidden>State</option>
+                <option value="CA">California</option>
+                <option value="MI">Michigan</option>
+            </select>
+        </div>
 
-        <h3>Sök Restaurang</h3>
+        <div class="two">
+            <form id="searchForm">
+
+                <button id="restaurang" type="submit">Search</button> <br>
+                <input id="cityInput" type="text">
+                <input id="cousin" type="text">
 
 
-     
+            </form> <br>
 
-        <form id="searchForm">
-
-            <button id="restaurang" type="submit">Search</button> <br>
-
-            <input id="cityInput" type="text">
-            <input type="text" id="cousin">
-            <input id="state" type="text">
-
-        </form> <br>
+        </div>
 
         <button id="clear">Clear</button> <br>
 
-        <ul id="list"></ul>
+        <div class="three">
+            <ul id="list"></ul>
 
-      <div id="result"></div>
+            <div id="result"></div>
+        </div>
+
 
     </main>
 

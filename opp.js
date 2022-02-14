@@ -39,10 +39,7 @@ fetch(url)
         obj.data.forEach(element => {
 
         })
-
     })
-
-
 
 // Anonym funktion för click submit
 formElement.addEventListener('submit', event => {

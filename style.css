@@ -108,9 +108,16 @@ button#clear {
   }
 
   #list{
+    text-align: center;
+    list-style-type: none;
     border: 1px solid;
     width:300px;
     margin:0px 40px;
-    text-decoration-skip: none;
+    
+  }
+
+  #result{
+    background-color:#FAFAD2;
+    
   }
 
